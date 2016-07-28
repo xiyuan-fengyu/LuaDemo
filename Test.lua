@@ -65,9 +65,37 @@ end
 
 
 --循环
+--for循环
 for i = 0, 5 do
-    print(i)
+    print("for", i)
 end
+
+--while循环
+local i = 0
+while(i < 5)
+do
+    print("while", i)
+    i = i + 1
+end
+
+--repeat untile
+local i = 0
+repeat
+    print("repeat util", i)
+    i = i + 1
+until (i >= 5)
+
+--break
+local i = 0
+for i = 0, 10 do
+    if i >= 3 then
+        break
+    else
+        print("for break", i)
+    end
+end
+
+
 
 --把匿名函数当参数传递
 function twoItemOption(item1, item2, option)
@@ -98,5 +126,24 @@ testGlobalAndLocal()
 testGlobalAndLocal1()
 
 --赋值
+c = {}
 a, b, c.sort = 1, 2, 3
 print(a, b, c, c.sort, type(c))
+
+--交换值
+a, b = b, a
+print(a, b)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
