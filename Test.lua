@@ -135,15 +135,74 @@ a, b = b, a
 print(a, b)
 
 
+--可变参数
+function avg(...)
+    local args = {...}
+    local argNum = #args
+    local argSum = 0
+    for i in ipairs(args) do
+        argSum = argSum + i
+    end
+    return argSum / argNum
+end
+
+print("1 2 3 的平均数为：", avg(1, 2, 3))
+
+--运算符 + - * / % ^(幂运算)
+print("2 ^ 4 = ", 2 ^ 4)
+print(2^3^2)
+print(2^(3^2))
+print((2^3)^2)
+print(5 / 2)
+print(5.1 / 2)
+print(5 % 2)
+print(5.1 % 2)
+
+--关系运算符 == ~=(不等于) < <= >= >
+print(1 ~= 2)
+
+--逻辑运算符
+print(true and false)
+print(true or false)
+print(not(true))
 
 
+obj = {
+    name = "Tom",
+    describeSelf = function ()
+        print("I'm Tom")
+    end
+}
+
+print(obj.name)
+print(obj.describeSelf())
+
+function test(n)
+    if n == 1 then
+        return 1
+    else
+        return n * test(n - 1)
+    end
+end
+
+print(test(5))
 
 
+--file io
+local file = io.open("Test.lua", "a+")
+print(file:read())
+file:close()
 
+for line in io.lines("Test.lua") do
+    print(line)
+end
 
+function divide(a, b)
+    return a / b
+end
 
-
-
-
+print(pcall(divide, 1, 1))
+print(pcall(divide, 1, 0))
+print(pcall(divide, 1))
 
 
