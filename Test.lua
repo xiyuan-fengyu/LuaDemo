@@ -97,5 +97,6 @@ testGlobalAndLocal()
 
 testGlobalAndLocal1()
 
-
-
+--赋值
+a, b, c.sort = 1, 2, 3
+print(a, b, c, c.sort, type(c))
